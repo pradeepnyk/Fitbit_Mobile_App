@@ -35,6 +35,9 @@
     - HTML report
     - Surefire report
 
+- Possible Improvements
+    - Additional scenarios in feature file
+
 Execution command prompt:
 `mvn clean verify -DsuiteXmlFile=(required test file name)`
 
