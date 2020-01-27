@@ -34,7 +34,7 @@
     - Surefire report
 
 Execution command prompt:
-mvn clean verify -DsuiteXmlFile=<required test file name>
+mvn clean verify -DsuiteXmlFile=(required test file name)
 
 Notes:
 - Test case re-usablity is possible which will drive the further execution steps
