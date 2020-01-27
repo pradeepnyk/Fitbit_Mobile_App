@@ -20,47 +20,38 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class TouchActions {
 
-	
 	boolean success = true;
 	IOSDriver<IOSElement> iosdriver;
 	AppiumDriver driver;
 	TouchAction action;
-	
+
 	public TouchActions(AppiumDriver driver) {
-		System.out.println("driver in touch");
-		System.out.println(driver);
 		this.driver = driver;
-		
+
 		this.action = new TouchAction(driver);
 	}
+
 	public void swipe(WebElement webelement) {
-		
+
 		Point bannerPoint = webelement.getLocation();
-		
+
 		// Get size of device screen
-	    Dimension screenSize = driver.manage().window().getSize();
-	    // Get start and end coordinates for horizontal swipe
-	    int startX = Math.toIntExact(Math.round(screenSize.getWidth() * 0.8));
-	    
-	    int endX = 0;
-	    
-	    this.action.press(PointOption.point(startX,bannerPoint.getY()+500))
-        .waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)))
-        .moveTo(PointOption.point(endX, bannerPoint.getY()+500))
-        .release().perform();
-	   
-	    
-	    
+		Dimension screenSize = driver.manage().window().getSize();
+		// Get start and end coordinates for horizontal swipe
+		int startX = Math.toIntExact(Math.round(screenSize.getWidth() * 0.8));
+
+		int endX = 0;
+
+		this.action.press(PointOption.point(startX, bannerPoint.getY() + 500))
+				.waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)))
+				.moveTo(PointOption.point(endX, bannerPoint.getY() + 500)).release().perform();
+
 	}
-	public void tap(WebElement webelement) {
-		
-		System.out.println("driver in tap");
-		System.out.println(driver);
-		
+
+	public boolean tap(WebElement webelement) {
 		this.action.tap(tapOptions().withElement(element(webelement)));
 		this.action.perform();
-		System.out.println("perfirmed tap");
-		
+		return true;
 	}
-	
+
 }

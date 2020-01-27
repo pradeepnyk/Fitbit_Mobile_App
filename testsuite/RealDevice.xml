@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Android-Test-Suite-RealDeviceTest">
+
+	<listeners>
+		<listener class-name="runner.NGTestListener" />
+	</listeners>
+
+	<parameter name="isLocal" value="true" />
+
+	<test name="Test-RealDevice">
+		<parameter name="deviceName" value="Nokia 2.2" />
+		<parameter name="url" value="http://0.0.0.0:4723/wd/hub" />
+		<parameter name="udid" value="HZAL1670EAJ71500358" />
+		<parameter name="env" value="ANDROID" />
+		<parameter name="isLocal" value="true" />
+		<classes>
+			<class name="testRunner.TestRunner" />
+		</classes>
+	</test>
+</suite>

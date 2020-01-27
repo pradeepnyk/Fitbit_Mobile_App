@@ -8,17 +8,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import appiumSupport.DriverSetup;
 import io.appium.java_client.MobileElement;
 
-public class GetElement {
+public class GetElement extends DriverSetup{
 
-	public static WebDriver driver;
+	public WebDriver driver;
+	
 
 	public static MobileElement findElementbyXpath(String xpath, int timeout) {
-		System.out.println("driver in find");
-		System.out.println(DriverSetup.driver);
+		
 		MobileElement element;
 
 		try {
-			element = DriverSetup.getTLDriver().findElementByXPath(xpath);
+			element = getTLDriver().findElementByXPath(xpath);
 		} catch (Exception e) {
 
 			element = null;
@@ -32,10 +32,9 @@ public class GetElement {
 		boolean isElementPresent = false;
 		try {
 
-//			mobileElement =  (MobileElement) DriverSetup.getTLDriver().findElementByXPath(xpath);
-			WebDriverWait wait = new WebDriverWait(DriverSetup.getTLDriver(), timeLimitInSeconds);
+			WebDriverWait wait = new WebDriverWait(getTLDriver(), timeLimitInSeconds);
 			WebElement check = wait
-					.until(ExpectedConditions.visibilityOf(DriverSetup.getTLDriver().findElementByXPath(xpath)));
+					.until(ExpectedConditions.visibilityOf(getTLDriver().findElementByXPath(xpath)));
 			isElementPresent = check.isDisplayed();
 
 		} catch (Exception e) {

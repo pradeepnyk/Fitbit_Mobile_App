@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Android-Test-Suite" parallel="tests">
-	<test name="Test-RealDevice">
+<suite name="Android-Test-Suite-Parallel-Execution" parallel="tests" thread-count="2">
+	
+	<test name="Test-RealDevicer">
 		<parameter name="deviceName" value="Nokia 2.2" />
-		<parameter name="url" value="http://0.0.0.0:4723/wd/hub" />
-		<parameter name="udid" value="HZAL1670EAJ71500358"/>
+		<parameter name="url" value="http://0.0.0.0:4724/wd/hub" />
+		<parameter name="udid" value="HZAL1670EAJ71500358" />
 		<parameter name="env" value="ANDROID" />
+		<parameter name="isLocal" value="true" />
 		<classes>
 			<class name="testRunner.TestRunner" />
 		</classes>
 	</test>
-	
+
 	<test name="Test-Emulator">
 		<parameter name="deviceName" value="Emulator" />
-		<parameter name="url" value="http://0.0.0.0:4724/wd/hub" />
-		<parameter name="udid" value="emulator-5554"/>
+		<parameter name="url" value="http://0.0.0.0:4723/wd/hub" />
+		<parameter name="udid" value="emulator-5554" />
 		<parameter name="env" value="ANDROID" />
+		<parameter name="isLocal" value="true" />
 		<classes>
 			<class name="testRunner.TestRunner" />
 		</classes>
 	</test>
-	
 </suite>

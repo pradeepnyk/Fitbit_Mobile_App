@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Android-Test-Suite-RemoteExecutionTest">
+
+	<listeners>
+		<listener class-name="runner.NGTestListener" />
+	</listeners>
+
+	
+	<parameter name="key" value="8635CC48CCEE43F696B2197DD1EAF5A9" />
+
+	<test name="Test-RealDevice">
+		<parameter name="deviceName" value="Samsung S9" />
+		<parameter name="url" value="https://us1.appium.testobject.com/wd/hub" />
+		<parameter name="udid" value="HZAL1670EAJ71500358" />
+		<parameter name="env" value="ANDROID" />
+		<parameter name="isLocal" value="true" />
+		<classes>
+			<class name="testRunner.TestRunner" />
+		</classes>
+	</test>
+</suite>
