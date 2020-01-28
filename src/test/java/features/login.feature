@@ -6,5 +6,5 @@ Scenario: User logging is successful
 	When user clicks on login button 
 	And user enters credentials and hit submit button 
 		|Username|Password|
-		|pradeep.rinku3@gmail.com|Testing123|
+		|Testing@email.com|Testing123|
 	Then verify user logged in successfully 
